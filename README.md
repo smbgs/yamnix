@@ -1,3 +1,3 @@
 # Somebugs Yamnix
 
-The microcomponent toolking
+The microcomponent toolkit
