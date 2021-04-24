@@ -1,3 +1,11 @@
 # Somebugs Yamnix
 
-The microcomponent toolkit
+The microcomponent toolkit.
+
+- Microservices
+
+- Codogeneration
+
+- Service mesh
+
+- Cloud native

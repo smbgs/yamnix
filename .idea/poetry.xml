@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PoetryConfigService">
+    <option name="poetryVirtualenvPaths">
+      <set>
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-core-ZtXVxu0s-py3.9/bin/python" />
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-cli-aHW29Gt1-py3.9/bin/python" />
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-profiles-cli-vF5s1APi-py3.9/bin/python" />
+      </set>
+    </option>
+  </component>
+</project>
