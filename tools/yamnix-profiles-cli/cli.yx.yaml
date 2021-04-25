@@ -1,0 +1,84 @@
+apiVersion: yamnix.somebugs.com/v1
+kind: UserInterface
+meta:
+  name: yamnix-profiles-cli
+  version: 0.0.1  #  TODO: synchronize with pyproject.toml etc.
+
+spec:
+
+  commandLineInterface:
+    desc: "TO BE DEFINED"
+    commandGroups:
+
+      profiles:
+        commands:
+          - name: list
+            desc: "Lists the existing user profiles"
+
+      aliases:
+        args:
+          - name: profile
+            desc: "Profile name to use"
+
+        commands:
+          - name: list
+            desc: "Lists the profile path aliases"
+
+      manage:
+        commandGroups:
+          profile:
+            desc: "Profile management commands"
+
+            args:
+              - name: profile
+                dest: "Short profile name"
+
+            commands:
+              - name: create
+                dest: "Creates the new profile"
+                args:
+                  - option: --template
+                    desc: "Profile name to copy from"
+                  - option: --template-uri
+                    desc: "URI to profile file to copy from"
+
+              - name: delete
+                dest: "Short profile name"
+
+              - name: rename
+                dest: "Renames the profile using new-name"
+                args:
+                  - new-name
+
+          alias:
+            args:
+              - name: profile
+                desc: "Profile name to use"
+
+              - name: set
+                desc: "Sets the profile path alias to the provided uri"
+                args:
+                  - alias_name
+                  - uri
+
+              - name: delete
+                desc: "Deletes the profile path alias"
+                args:
+                  - alias_name
+
+  # TODO: proper requirements to synchronize to pyproject.toml
+  requires:
+    - library: yamnix-core
+      version: "*"
+
+    - service: yamnix-profiles
+      methods:
+        - name: list-profiles
+        - name: create-profile
+        - name: rename-profile
+        - name: delete-profile
+
+        - name: list-aliases
+        - name: set-alias
+        - name: delete-alias
+
