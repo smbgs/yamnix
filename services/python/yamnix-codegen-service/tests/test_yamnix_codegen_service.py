@@ -1,4 +1,4 @@
-from yamnix_profiles_cli import __version__
+from yamnix_codegen_service import __version__
 
 
 def test_version():

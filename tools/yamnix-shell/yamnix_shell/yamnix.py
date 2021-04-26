@@ -1,12 +1,12 @@
 from yamnix_cli.arguments import YamnixCLI
 
 
-class YamnixProfilesCLI(YamnixCLI):
+class YamnixShell(YamnixCLI):
     pass
 
 
 def main():
-    cli = YamnixProfilesCLI()
+    cli = YamnixShell()
     cli.output.console.print(cli.arguments)
     cli.print()
 

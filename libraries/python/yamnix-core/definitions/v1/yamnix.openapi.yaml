@@ -1,0 +1,149 @@
+openapi: 3.0.3
+
+info:
+  version: yamnix.somebugs.com/v1
+  title: Yamnix CLI User Interface
+  description: Yamnix Command Line User Interface definition schema
+  termsOfService: https://yamnix.somebugs.com/
+
+
+paths: { }
+
+components:
+
+  # TODO: move to separate files
+  schemas:
+
+    ExtendedErrorModel:
+      $ref: "./parameters/CmdArguments.yaml"
+
+    LibraryRequirement:
+      type: object
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+
+    ServiceRequirement:
+      type: object
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        methods:
+          type: object
+          properties:
+            name:
+              type: string
+
+    CommandOption:
+      anyOf:
+        - type: string
+        - type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+            desc:
+              type: string
+
+    CommandArgument:
+      anyOf:
+        - type: string
+        - type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            type:
+              type: string
+            desc:
+              type: string
+
+    Command:
+      type: object
+      required:
+        - name
+
+      properties:
+        name:
+          type: string
+        dest:
+          type: string
+
+        options:
+          type: array
+          items:
+            $ref: "#/components/schemas/CommandOption"
+
+        arguments:
+          type: array
+          items:
+            $ref: "#/components/schemas/CommandArgument"
+
+    CommandGroup:
+      type: object
+
+      properties:
+        desc:
+          type: string
+
+        args:
+          type: array
+
+        commandGroups:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/CommandGroup"
+
+        commands:
+          type: array
+          items:
+            $ref: "#/components/schemas/Command"
+
+    UserInterfaceSpec:
+      type: object
+
+      required:
+        - commandLineInterface
+
+      properties:
+        commandLineInterface:
+          type: object
+
+          properties:
+            desc:
+              type: string
+
+            commandGroups:
+              type: object
+              additionalProperties:
+                $ref: "#/components/schemas/CommandGroup"
+
+        requires:
+          type: object
+          properties:
+            libraries:
+              type: array
+              items:
+                $ref: "#/components/schemas/LibraryRequirement"
+
+            services:
+              type: array
+              items:
+                $ref: "#/components/schemas/ServiceRequirement"
+
+    root.Definition:
+      $ref: "#/components/schemas/UserInterfaceSpec"
+
+      x-kubernetes-group-version-kind:
+        group: yamnix.somebugs.com
+        version: v1
+        kind: UserInterface
+

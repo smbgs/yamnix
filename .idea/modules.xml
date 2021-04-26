@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/libraries/python/yamnix-cli/yamnix-cli.iml" filepath="$PROJECT_DIR$/libraries/python/yamnix-cli/yamnix-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/python/yamnix-codegen/yamnix-codegen.iml" filepath="$PROJECT_DIR$/libraries/python/yamnix-codegen/yamnix-codegen.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/python/yamnix-core/yamnix-core.iml" filepath="$PROJECT_DIR$/libraries/python/yamnix-core/yamnix-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/python/yamnix-profiles/yamnix-profiles.iml" filepath="$PROJECT_DIR$/libraries/python/yamnix-profiles/yamnix-profiles.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tools/yamnix-profiles-cli/yamnix-profiles-cli.iml" filepath="$PROJECT_DIR$/tools/yamnix-profiles-cli/yamnix-profiles-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tools/yamnix-shell/yamnix-shell.iml" filepath="$PROJECT_DIR$/tools/yamnix-shell/yamnix-shell.iml" />
     </modules>
   </component>
 </project>

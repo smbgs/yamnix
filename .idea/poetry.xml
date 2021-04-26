@@ -6,6 +6,9 @@
         <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-core-ZtXVxu0s-py3.9/bin/python" />
         <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-cli-aHW29Gt1-py3.9/bin/python" />
         <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-profiles-cli-vF5s1APi-py3.9/bin/python" />
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-profiles-cli-DOfTsUyS-py3.9/bin/python" />
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-Jbh2RY0h-py3.9/bin/python" />
+        <option value="$USER_HOME$/.cache/pypoetry/virtualenvs/yamnix-codegen-cMOogatl-py3.9/bin/python" />
       </set>
     </option>
   </component>

@@ -1,5 +1,5 @@
 import argparse
-from typing import TypeVar, Callable, Any, Union
+from typing import Any, Union
 
 from rich.console import JustifyMethod, OverflowMethod
 from rich.style import Style

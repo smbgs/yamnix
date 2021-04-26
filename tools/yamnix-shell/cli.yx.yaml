@@ -36,10 +36,10 @@ spec:
             commands:
               - name: create
                 dest: "Creates the new profile"
-                args:
-                  - option: --template
+                options:
+                  - name: --template
                     desc: "Profile name to copy from"
-                  - option: --template-uri
+                  - name: --template-uri
                     desc: "URI to profile file to copy from"
 
               - name: delete
@@ -47,8 +47,9 @@ spec:
 
               - name: rename
                 dest: "Renames the profile using new-name"
-                args:
-                  - new-name
+                arguments:
+                  - name: new-name
+                    required: true
 
           alias:
             args:
@@ -58,27 +59,30 @@ spec:
               - name: set
                 desc: "Sets the profile path alias to the provided uri"
                 args:
-                  - alias_name
+                  - alias-name
                   - uri
 
               - name: delete
                 desc: "Deletes the profile path alias"
                 args:
-                  - alias_name
+                  - alias-name
 
   # TODO: proper requirements to synchronize to pyproject.toml
   requires:
-    - library: yamnix-core
-      version: "*"
+    libraries:
+      - name: yamnix-cli
+        version: "*"
 
-    - service: yamnix-profiles
-      methods:
-        - name: list-profiles
-        - name: create-profile
-        - name: rename-profile
-        - name: delete-profile
+    services:
+      - name: yamnix-profiles
+        methods:
+          - name: list-profiles
+          - name: create-profile
+          - name: rename-profile
+          - name: delete-profile
 
-        - name: list-aliases
-        - name: set-alias
-        - name: delete-alias
+          - name: list-aliases
+          - name: set-alias
+          - name: delete-alias
 
+      - name: yamnix-codegen

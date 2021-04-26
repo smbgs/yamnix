@@ -1,19 +1,17 @@
 [tool.poetry]
-name = "yamnix-cli"
+name = "yamnix-codegen-service"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Chichenin <achichenin@dataart.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-yamnix-core = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.3"
-yamnix-core= { path = "../yamnix-core/", develop = true }
+pytest = "^5.2"
+yamnix-core= { path = "../../libraries/yamnix-core/", develop = true }
+yamnix-codegen= { path = "../../libraries/yamnix-codegen/", develop = true }
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-

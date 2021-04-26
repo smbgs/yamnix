@@ -26,7 +26,8 @@ class YamnixConsole(Console):
                 for f in t.get('frames'):
                     lines.append(
                         f" ⎔ [white bold]{f.get('name')}[/] in 🗎 "
-                        f"[white][link=file://{f.get('filename')}]{f.get('filename')}"
+                        f"[white][link=file://{f.get('filename')}]"
+                        f"{f.get('filename')}"
                         f":{f.get('lineno')}[/link][/]"
                     )
 

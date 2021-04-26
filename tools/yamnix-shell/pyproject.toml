@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "yamnix-profiles-cli"
+name = "yamnix-shell"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Chichenin <achichenin@dataart.com>"]
@@ -17,4 +17,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-yamnix = "yamnix_profiles_cli.yamnix:main"
+yamnix = "yamnix_shell.yamnix:main"
